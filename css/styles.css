@@ -69,3 +69,10 @@ nav ul li a {
   width: 100%;
   border-radius: 5px;
 }
+
+.historia {
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
