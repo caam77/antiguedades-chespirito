@@ -1,16 +1,17 @@
 :root {
-  --primary-color: #005f56; 
-  --secondary-color: #1e1e1e; 
+  --primary-color: #005f56;
+  --secondary-color: #1e1e1e;
   --text-color: #ffffff;
   --btn-color: #008577;
+  --hover-color: #006b5e;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5dc;
-  color: #222;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 header {
@@ -24,30 +25,36 @@ header {
   background: var(--primary-color);
   color: var(--text-color);
   text-align: center;
-  padding: 50px 20px;
+  padding: 100px 20px;
 }
 
 .btn-whatsapp {
   background: var(--btn-color);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
   margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: var(--hover-color);
 }
 
 .about,
 .products {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .product-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
 }
 
 .product-card {
@@ -55,7 +62,11 @@ header {
   padding: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
 }
 
 .product-card img {
@@ -83,4 +94,14 @@ footer {
 
 .footer-contact p {
   font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
